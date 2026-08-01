@@ -6,7 +6,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
     content = models.TextField()
-    cover_image = models.URLField(blank=True, null=True)  # ✅ URLField
+    cover_image = models.URLField(blank=True, null=True)  
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -78,7 +78,7 @@ class Message(models.Model):
         blank=True,
         related_name='shared_in_messages'
     )
-    file = models.URLField(blank=True, null=True)  # ✅ URLField
+    file = models.URLField(blank=True, null=True)  
     file_name = models.CharField(max_length=255, blank=True)
     file_type = models.CharField(max_length=50, blank=True)
     is_read = models.BooleanField(default=False)
