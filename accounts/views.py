@@ -102,7 +102,7 @@ class EditProfileView(LoginRequiredMixin, View):
             user_form.save()
             profile_instance = profile_form.save(commit=False)
 
-            # ✅ Save Cloudinary URL directly
+            #  Save Cloudinary URL directly
             avatar_url = request.POST.get('avatar_url')
             if avatar_url:
                 profile_instance.avatar = avatar_url
