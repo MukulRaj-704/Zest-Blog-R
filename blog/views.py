@@ -370,7 +370,7 @@ def send_file(request, conversation_id):
     if not uploaded_file:
         return JsonResponse({'success': False, 'error': 'No file'})
 
-    # ✅ Upload directly to Cloudinary
+    #  Upload directly to Cloudinary
     import cloudinary.uploader
     file_name = uploaded_file.name
     extension = file_name.split('.')[-1].lower()
@@ -388,7 +388,7 @@ def send_file(request, conversation_id):
         conversation=conversation,
         sender=request.user,
         body='',
-        file=file_url,        # ✅ store URL string
+        file=file_url,        
         file_name=file_name,
         file_type=file_type
     )
@@ -397,7 +397,7 @@ def send_file(request, conversation_id):
         return JsonResponse({
             'success': True,
             'message_id': message.id,
-            'file_url': message.file,   # ✅ already a URL string now
+            'file_url': message.file,   
             'file_name': message.file_name,
             'file_type': message.file_type,
             'sender': request.user.username,
