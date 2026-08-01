@@ -42,7 +42,7 @@ class EditProfileExtrasForm(forms.ModelForm):
     """Handles only bio — avatar handled by Cloudinary widget"""
     class Meta:
         model = UserProfile
-        fields = ['bio']  # ✅ removed 'avatar'
+        fields = ['bio']  
         widgets = {
             'bio': forms.Textarea(attrs={
                 'class': 'w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-800 '
